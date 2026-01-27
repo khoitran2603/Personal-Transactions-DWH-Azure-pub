@@ -1,0 +1,11 @@
+{
+	"name": "datalake",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://storagebudgetproject.dfs.core.windows.net/"
+		}
+	}
+}
