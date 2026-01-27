@@ -1,9 +1,0 @@
-{
-	"name": "df-personalbudget",
-	"location": "eastus",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "2ee85565-b271-4332-9a67-00ab948aeb22",
-		"tenantId": "b42b0f0c-ca65-4e2f-8b8a-6e9c3c6a6474"
-	}
-}
