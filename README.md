@@ -7,6 +7,7 @@ The project focuses on traceability, repeatability, and analytical readiness, ra
 ## 🏗️ Data Architecture
 
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
+![Data Architecture](docs/data_architecture.png)
 
 1. **Bronze Layer**: Stores raw CSV data exactly as received from bank exports. Data is ingested from Azure Container into SQL Server Database, and transfer to Data Lake via ADF.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
