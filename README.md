@@ -20,9 +20,9 @@ Personal-Transactions-DWH-Azure/
 │  └─ loop_input.txt             # Loop input for parameterised pipelines
 │
 ├─ docs/
-│  ├─ data_architecture.png      # High-level architecture diagram
-│  ├─ data_flow.png              # Detailed data flow diagram
-│  └─ data_catalog.md            # Gold layer data catalog
+│  ├─ data_architecture.drawio   # Draw.io file shows the project's architecture
+│  ├─ data_flow.drawio           # Draw.io file for the data flow diagram
+│  └─ data_catalog.md            # Gold layer data catalog, including field descriptions and metadata
 │
 ├─ source/
 │  ├─ bank_anz/                  # Reference structure / sanitised sample files
