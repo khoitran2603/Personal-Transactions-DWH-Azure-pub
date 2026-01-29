@@ -25,7 +25,9 @@ Personal-Transactions-DWH-Azure/
 │  └─ data_catalog.md            # Gold layer data catalog
 │
 ├─ source/
-│  ├─ bank_*/                    # Reference structure / sanitised sample files
+│  ├─ bank_anz/                  # Reference structure / sanitised sample files
+│  ├─ bank_commbank/             # Reference structure / sanitised sample files
+│  ├─ bank_westpac/              # Reference structure / sanitised sample files
 │
 ├─ sql/
 │  ├─ bronze/                    # Bronze layer DDL & stored procedures
