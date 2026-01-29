@@ -22,8 +22,8 @@ databricks/
 ├─ jobs & pipelines/
 │  ├─ 01_manual_transactions_upsert.ipynb    # Apply manual (non-bank) transaction inserts
 │  ├─ 02_gold_master_stg_build.ipynb         # Build consolidated Gold staging table from Silver
-│  └─ 03_gold_master_cdc_apply.py            # Apply CDC logic to update Gold master (idempotent)
-│                                              , packaged as a pipeline and run via Databricks jobs
+│  └─ 03_gold_master_cdc_apply.py            # Apply CDC logic to update Gold master (idempotent); packaged as a pipeline and run via Databricks jobs
+│                                              
 ├─ utils/
 │  ├─ lookup_tables.py             # Category, location, and note lookup logic (sample)
 │  ├─ manual_inserts.py            # Central definition for manual transaction records (sample)
