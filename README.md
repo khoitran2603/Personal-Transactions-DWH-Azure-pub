@@ -1,4 +1,29 @@
-# Personal-Transactions-DWH-Azure-pub
+# Personal Transaction Data Warehouse & Analytics Project (Azure + Databricks)
+
+A personal data warehouse built to ingest, clean, standardize, and analyze multi-bank transaction data using a Bronze → Silver → Gold architecture.
+The project focuses on traceability, repeatability, and analytical readiness, rather than real-time processing.
+
+---
+## 🏗️ Data Architecture
+
+The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
+
+1. **Bronze Layer**: Stores raw CSV data exactly as received from bank exports. Data is ingested from Azure Container into SQL Server Database, and transfer to Data Lake via ADF.
+2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
+3. **Gold Layer**: Consolidate transactions across all banks into a single fact table, applies final business rules and overrides. Become a single source of truth for dashboard and reporting,
+
+---
+## 📖 Project Overview
+This project simulates a production-style data warehouse using personal financial data.
+It emphasizes:
+- Clear data lineage
+- Controlled refresh behavior
+- Separation of raw data, business logic, and analytics output
+
+The warehouse is designed for monthly monitoring, acknowledging that bank exports are not real-time and may be subject to short delays.
+
+## 🚀 Project Requirements
+
 
 ## 📂 Repository Structure
 ```
@@ -35,3 +60,15 @@ Personal-Transactions-DWH-Azure/
 │
 └─ README.md                     # Project overview & usage guide
 ```
+---
+## 🗝️ Key Outputs
+- Unified transaction fact table across multiple banks
+- Categorized income and expense records
+- Monthly and historical spending trends
+- Clean inputs for dashboards and forecasting models
+- A reusable personal analytics framework that scales over time
+
+---
+## 🛡️ License
+
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
