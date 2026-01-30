@@ -69,6 +69,7 @@ Personal-Transactions-DWH-Azure/
 │  ├─ data_architecture.drawio   # Draw.io file shows the project's architecture
 │  ├─ data_flow.drawio           # Draw.io file for the data flow diagram
 │  └─ data_catalog.md            # Gold layer data catalog, including field descriptions and metadata
+│  └─ dashboards/                # Power BI dashboards built on top of the Gold layer
 │
 ├─ source/
 │  ├─ bank_anz/                  # Reference structure / sanitised sample files
