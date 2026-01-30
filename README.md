@@ -98,13 +98,13 @@ The following Power BI dashboards are built on top of the **Gold layer**
 and demonstrate how curated transaction data is used for monthly financial monitoring.
 
 ### Monthly Review
-![Monthly Review Dashboard](docs/dashboards/monthly_review.png)
+<img src="docs/dashboards/monthly_review.png" width="850">
 
 > High-level overview of income, expenses, and category distribution.
 > Designed for quick monthly check-ins and trend awareness.
 
 ### Monthly Detail
-![Monthly Detail Dashboard](docs/dashboards/monthly_detail.png)
+<img src="docs/dashboards/monthly_detail.png" width="650">
 
 > Transaction-level breakdown with category and time-based analysis,
 > supporting deeper inspection and month-over-month comparison.
