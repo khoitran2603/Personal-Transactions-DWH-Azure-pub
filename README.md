@@ -1,6 +1,6 @@
-# Personal Transaction Data Warehouse & Analytics Project (Azure + Databricks)
+# Personal Transaction Data Warehouse 
 
-A personal data warehouse built to ingest, clean, standardize, and analyze multi-bank transaction data using a Bronze → Silver → Gold architecture.
+A personal data warehouse built to ingest, clean, standardize, and analyze multi-bank transaction data using a ***Bronze → Silver → Gold*** architecture.
 The project focuses on traceability, repeatability, and analytical readiness, rather than real-time processing.
 
 ---
@@ -9,23 +9,43 @@ The project focuses on traceability, repeatability, and analytical readiness, ra
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 ![Data Architecture](docs/data_architecture.png)
 
-1. **Bronze Layer**: Stores raw CSV data exactly as received from bank exports. Data is ingested from Azure Container into SQL Server Database, and transfer to Data Lake via ADF.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Consolidate transactions across all banks into a single fact table, applies final business rules and overrides. Become a single source of truth for dashboard and reporting,
+1. **Bronze Layer**
+- Stores raw CSV data exactly as received from bank exports.
+- Data is ingested from **Azure Blob Storage** into **Azure SQL Database**, then transferred to **Azure Data Lake** via **Azure Data Factory (ADF)** with minimal transformation.
+2. **Silver Layer**
+- Performs data cleansing, standardization, and normalization using **Databricks (PySpark)**.
+- This layer applies business rules, categorization logic, location inference, and description normalization to produce analysis-ready transactional data.
+3. **Gold Layer**
+- Consolidates transactions across all banks into a single master table.
+- Applies final business rules, overrides, and manual adjustments to become the **single source of truth** for dashboards, reporting, and downstream analytics.,
 
 ---
 ## 📖 Project Overview
 This project simulates a production-style data warehouse using personal financial data.
 It emphasizes:
-- Clear data lineage
-- Controlled refresh behavior
-- Separation of raw data, business logic, and analytics output
+- Clear data lineage from source files to analytics outputs
+- Controlled refresh behavior (batch-oriented, non-incremental)
+- Separation of raw data, business logic, and analytics layers
 
 The warehouse is designed for monthly monitoring, acknowledging that bank exports are not real-time and may be subject to short delays.
 
+---
 ## 🚀 Project Requirements
 
+### Building the Data Warehouse (Data Engineering)
+**Objective:**
+Design and implement a scalable, maintainable data warehouse on Azure that ingests multi-bank transaction data, enforces clear data layering (Bronze/Silver/Gold), and supports reliable analytics and reporting.
 
+**Specifications:**
+- Azure Blob Storage for raw CSV ingestion
+- Azure SQL Database for Bronze schema management and control logic
+- Azure Data Factory for orchestration and data movement
+- Azure Data Lake Storage Gen2 as the analytical storage layer
+- Databricks (PySpark) for Silver and Gold transformations
+- Batch-based refresh strategy (TRUNCATE + INSERT / full reloads)
+- Explicit execution order with no hidden dependencies
+
+---
 ## 📂 Repository Structure
 ```
 Personal-Transactions-DWH-Azure/
@@ -63,11 +83,31 @@ Personal-Transactions-DWH-Azure/
 ```
 ---
 ## 🗝️ Key Outputs
-- Unified transaction fact table across multiple banks
-- Categorized income and expense records
+- Unified transaction master table across multiple banks
+- Categorised income and expense records
 - Monthly and historical spending trends
 - Clean inputs for dashboards and forecasting models
 - A reusable personal analytics framework that scales over time
+
+---
+## 📊 Dashboard Preview (Power BI)
+
+> Dashboards are refreshed monthly to align with batch-based data ingestion and the availability of non-real-time bank exports.
+
+The following Power BI dashboards are built on top of the **Gold layer**
+and demonstrate how curated transaction data is used for monthly financial monitoring.
+
+### Monthly Review
+![Monthly Review Dashboard](docs/dashboards/monthly_review.png)
+
+> High-level overview of income, expenses, and category distribution.
+> Designed for quick monthly check-ins and trend awareness.
+
+### Monthly Detail
+![Monthly Detail Dashboard](docs/dashboards/monthly_detail.png)
+
+> Transaction-level breakdown with category and time-based analysis,
+> supporting deeper inspection and month-over-month comparison.
 
 ---
 ## 🛡️ License
